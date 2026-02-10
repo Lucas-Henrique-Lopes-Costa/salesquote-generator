@@ -50,12 +50,12 @@ const ProductsTable = ({ products, onChange }: ProductsTableProps) => {
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-primary/5">
-              <th className="text-left p-3 font-medium text-foreground">Descrição do Produto</th>
-              <th className="text-left p-3 font-medium text-foreground w-24">Unid.</th>
-              <th className="text-left p-3 font-medium text-foreground w-24">Volume</th>
-              <th className="text-left p-3 font-medium text-foreground w-32">Preço Un.</th>
-              <th className="text-right p-3 font-medium text-foreground w-32">Total</th>
-              <th className="w-12 p-3"></th>
+              <th className="text-left p-3 font-medium text-foreground min-w-[280px]">Descrição do Produto</th>
+              <th className="text-left p-3 font-medium text-foreground min-w-[100px]">Unid.</th>
+              <th className="text-left p-3 font-medium text-foreground min-w-[120px]">Volume</th>
+              <th className="text-left p-3 font-medium text-foreground min-w-[150px]">Preço Un.</th>
+              <th className="text-right p-3 font-medium text-foreground min-w-[150px]">Total</th>
+              <th className="w-14 p-3"></th>
             </tr>
           </thead>
           <tbody>

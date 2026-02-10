@@ -10,7 +10,7 @@ import SectionTitle from "@/components/SectionTitle";
 import ProductsTable from "@/components/ProductsTable";
 import { OrderFormData, Product } from "@/types/order";
 import { generateOrderPdf } from "@/utils/generatePdf";
-import biomfarmLogo from "@/assets/biomfarm-logo.jpg";
+import biomfarmLogo from "@/assets/biomfarm-logo.png";
 
 const initialFormData: OrderFormData = {
   vendedor: "",
@@ -113,12 +113,11 @@ const Index = () => {
       <form onSubmit={handleSubmit} className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden">
-          <div className="bg-primary p-6 flex items-center gap-4">
-            <img src={biomfarmLogo} alt="Biomfarm" className="h-14 w-14 rounded-lg bg-primary-foreground p-1 object-contain" />
+          <div className="bg-primary p-6 flex items-center gap-5">
+            <img src={biomfarmLogo} alt="Biomfarm" className="h-16 rounded-lg bg-primary-foreground p-2 object-contain" />
             <div className="text-primary-foreground">
-              <h1 className="text-xl font-bold">BIOMFARM</h1>
-              <p className="text-sm opacity-90">Biotecnologia e Bionutrição Vegetal LTDA</p>
-              <p className="text-xs opacity-70">CNPJ: 55.390.062/0001-49 | comercial@biomfarm.com.br</p>
+              <h1 className="text-xl font-bold tracking-wide">Pedido de Venda</h1>
+              <p className="text-xs opacity-70 mt-1">CNPJ: 55.390.062/0001-49 | comercial@biomfarm.com.br</p>
             </div>
           </div>
           <div className="p-6 space-y-6">
