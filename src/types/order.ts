@@ -22,10 +22,12 @@ export interface OrderFormData {
   enderecoFaturamento: string;
   cepFaturamento: string;
   cidadeFaturamento: string;
+  bairroFaturamento: string;
   ufFaturamento: string;
   enderecoCobranca: string;
   cepCobranca: string;
   cidadeCobranca: string;
+  bairroCobranca: string;
   ufCobranca: string;
   produtos: Product[];
   condicaoPagamento: 'avista' | 'aprazo' | 'bonificacao' | 'troca';

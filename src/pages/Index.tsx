@@ -27,10 +27,12 @@ const initialFormData: OrderFormData = {
   enderecoFaturamento: "",
   cepFaturamento: "",
   cidadeFaturamento: "",
+  bairroFaturamento: "",
   ufFaturamento: "",
   enderecoCobranca: "",
   cepCobranca: "",
   cidadeCobranca: "",
+  bairroCobranca: "",
   ufCobranca: "",
   produtos: [],
   condicaoPagamento: "avista",
@@ -92,7 +94,7 @@ const Index = () => {
       if (!response.ok) throw new Error("Erro ao enviar");
 
       toast({ title: "Pedido enviado com sucesso!", description: "O PDF foi enviado para financeiro@biomfarm.com.br" });
-      
+
       // Also download
       doc.save(`Orcamento_${formData.vendedor}_${formData.codigo}.pdf`);
     } catch {
@@ -187,7 +189,7 @@ const Index = () => {
 
             {/* Address */}
             <SectionTitle>Endereço de Faturamento</SectionTitle>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
               <div className="md:col-span-2">
                 <Label>Endereço</Label>
                 <Input value={formData.enderecoFaturamento} onChange={(e) => update("enderecoFaturamento", e.target.value)} />
@@ -196,20 +198,22 @@ const Index = () => {
                 <Label>CEP</Label>
                 <Input value={formData.cepFaturamento} onChange={(e) => update("cepFaturamento", e.target.value)} />
               </div>
-              <div className="flex gap-2">
-                <div className="flex-1">
-                  <Label>Cidade</Label>
-                  <Input value={formData.cidadeFaturamento} onChange={(e) => update("cidadeFaturamento", e.target.value)} />
-                </div>
-                <div className="w-20">
-                  <Label>UF</Label>
-                  <Input value={formData.ufFaturamento} onChange={(e) => update("ufFaturamento", e.target.value)} maxLength={2} />
-                </div>
+              <div>
+                <Label>Cidade</Label>
+                <Input value={formData.cidadeFaturamento} onChange={(e) => update("cidadeFaturamento", e.target.value)} />
+              </div>
+              <div>
+                <Label>Bairro</Label>
+                <Input value={formData.bairroFaturamento} onChange={(e) => update("bairroFaturamento", e.target.value)} />
+              </div>
+              <div className="w-20">
+                <Label>UF</Label>
+                <Input value={formData.ufFaturamento} onChange={(e) => update("ufFaturamento", e.target.value)} maxLength={2} />
               </div>
             </div>
 
             <SectionTitle>Endereço de Cobrança</SectionTitle>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
               <div className="md:col-span-2">
                 <Label>Endereço</Label>
                 <Input value={formData.enderecoCobranca} onChange={(e) => update("enderecoCobranca", e.target.value)} />
@@ -218,15 +222,17 @@ const Index = () => {
                 <Label>CEP</Label>
                 <Input value={formData.cepCobranca} onChange={(e) => update("cepCobranca", e.target.value)} />
               </div>
-              <div className="flex gap-2">
-                <div className="flex-1">
-                  <Label>Cidade</Label>
-                  <Input value={formData.cidadeCobranca} onChange={(e) => update("cidadeCobranca", e.target.value)} />
-                </div>
-                <div className="w-20">
-                  <Label>UF</Label>
-                  <Input value={formData.ufCobranca} onChange={(e) => update("ufCobranca", e.target.value)} maxLength={2} />
-                </div>
+              <div>
+                <Label>Cidade</Label>
+                <Input value={formData.cidadeCobranca} onChange={(e) => update("cidadeCobranca", e.target.value)} />
+              </div>
+              <div>
+                <Label>Bairro</Label>
+                <Input value={formData.bairroCobranca} onChange={(e) => update("bairroCobranca", e.target.value)} />
+              </div>
+              <div className="w-20">
+                <Label>UF</Label>
+                <Input value={formData.ufCobranca} onChange={(e) => update("ufCobranca", e.target.value)} maxLength={2} />
               </div>
             </div>
 
